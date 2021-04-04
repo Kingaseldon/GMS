@@ -2,16 +2,17 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <title>Login</title>
+    <title>Admin Login</title>
 </head>
 <body>
-<div class="container" style="padding-top: 50px;">
+<div class="container" style="padding-top: 10%;">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading" style="text-align:center;"><strong>College of Science and Technology</strong><br><hr>Admin Login</div>
 
-                <div class="panel-body">
+
+                <div class="panel-body" style="margin-top:5%;">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
