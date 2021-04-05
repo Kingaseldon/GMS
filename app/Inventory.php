@@ -8,7 +8,7 @@ class Inventory extends Model
 {
     protected $table = 'inventories';
 
-    protected $fillable =['name', 'quantity', 'condition' ];
+    protected $fillable =['name', 'quantity', 'condition','location','image' ];
 
     public $timestamps = false;
 

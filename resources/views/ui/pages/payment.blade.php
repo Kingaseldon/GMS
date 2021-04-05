@@ -36,7 +36,7 @@
 
                      <div class="col-md-6 mb-3">
                         <label for="cc-name">CID</label>
-                        <input type="number" class="form-control" name="customer_id" id="cc-name" placeholder="CID" required>
+                        <input type="number" class="form-control" name="customer_id" id="cc-name"  value="{{ request('id') }}" required>
                       <div class="invalid-feedback">
                                   Field required
                       </div>
