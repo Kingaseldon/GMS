@@ -50,17 +50,22 @@ class BookingController extends Controller
             $image->move('uploads', $image->getClientOriginalName());
         }              
         
-        if ($customer_id = Customer::where('id','=', Input::get('customer_id'))->first()){
+        if ($customer_id = Customer::where('id','=', Input::get('customer_id'))->first())
+        {
    
             Payment::create([    
         
             'customer_id' => $customer_id->id,    
             'journal_no' =>$request->journal_no,
             'image' => $request->image->getClientOriginalName(),
-        ]);   
-        return Redirect::route('home')->with('success', 'booked! check your status');
+            ]);   
+            return Redirect::route('home')->with('success', 'booked! check your status');
+        }
+
+        else{
+            return back()->with('success', 'Enter correct CID');
+           }
     }
-}
 
     public function store(Request $request){
     

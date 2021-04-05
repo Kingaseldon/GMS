@@ -13,13 +13,23 @@ class InventoryController extends Controller
             'name' => 'required',
             'quantity' => 'required',
             'condition' => 'required',
+            'location' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             
         ]);
+
+        // Upload the image
+        if ($request->hasFile('image')) {
+        $image = $request->image;
+        $image->move('uploads', $image->getClientOriginalName());
+        }
 
        Inventory::create([
             'name' => $request->name,
             'quantity' => $request->quantity,
             'condition' => $request->condition,
+            'location' => $request->location,
+            'image' => $request->image->getClientOriginalName(),
             
         ]);
 

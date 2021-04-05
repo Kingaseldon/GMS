@@ -18,6 +18,8 @@ class CreateInventoriesTable extends Migration
             $table->string('name');
             $table->integer('quantity');
             $table->string('condition');
+            $table->string('location');
+            $table->text('image');
         });
     }
 

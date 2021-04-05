@@ -9,6 +9,7 @@ use App\Booking;
 use App\Payment;
 use App\Inventory;
 use DB;
+use Redirect;
 
 class HomeController extends Controller
 {
@@ -61,14 +62,10 @@ class HomeController extends Controller
 
     public function destroy($id){
         // Delete the order
-       $delete = DB::table('bookings')->where('id', $id)->delete();
+       $delete = DB::table('bookings')->where('id', $id)->delete();   
     
-
-      
-
-        // Redirect back
-        return back()->with('success', 'Booking deleted');
-
+       // Redirect back
+        return Redirect::route('registers')->with('booking deleted');
 
     }
 

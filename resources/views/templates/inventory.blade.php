@@ -25,7 +25,9 @@
                 <th>Sl.No</th>
                 <th>Name</th>
                 <th>Quantity</th>   
-                <th>Condition</th>                             
+                <th>Condition</th>      
+                <th>Location</th>  
+                <th>Image</th>                         
                 <th class="text-center width-100">Action</th>
             </tr>
             </thead>
@@ -39,7 +41,17 @@
                 <td>{{$inventory->name}}</td>
                 <td>{{$inventory->quantity}}</td>
                 <td>{{$inventory->condition}}</td>
+                <td>{{$inventory->location}}</td>
+                <td><img src="{{ url('uploads').'/'. $inventory->image }}" alt="{{ $inventory->image }}" style="width:200px;" class="img-thumbnail"></td>
 
+                <td>
+                <a href="">
+                <button class="btn btn-danger btn-sm"><span class="fa fa-trash"></span</button>
+                </a>
+               
+                <button class="btn btn-info btn-sm ti-pencil"><span class="fa fa-pencil"></span</button>
+                
+                </td>
             </td>
             </tr>
             @endforeach
